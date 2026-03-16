@@ -15,6 +15,11 @@ Frontend: React
 
 Instructions will be added.
 
+## Requirements
+
+- Java 25
+- Maven
+
 ## Development notes
 
 Work log and notes about development decisions will be added.
