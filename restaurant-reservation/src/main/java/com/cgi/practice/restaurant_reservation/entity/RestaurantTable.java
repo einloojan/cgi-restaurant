@@ -12,6 +12,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "restaurant_tables")
 
 public class RestaurantTable {
     @Id
