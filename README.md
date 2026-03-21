@@ -66,4 +66,4 @@ Example endpoints:
 
 ## Documentation
 
-- [Development notes](docs/development-notes.md)
+- [Development notes](restaurant-reservation/docs/development-notes.md)
