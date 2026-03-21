@@ -64,6 +64,6 @@ Example endpoints:
 
 ---
 
-## Development notes
+## Documentation
 
-Work log and notes about development decisions will be added.
+- [Development notes](docs/development-notes.md)
