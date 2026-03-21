@@ -3,13 +3,11 @@ package com.cgi.practice.restaurant_reservation.controller;
 import com.cgi.practice.restaurant_reservation.dto.CreateReservationRequest;
 import com.cgi.practice.restaurant_reservation.entity.Reservation;
 import com.cgi.practice.restaurant_reservation.service.ReservationService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/reservations")
+@CrossOrigin(origins = "http:localhost:5173")
 
 public class ReservationController {
 
