@@ -4,11 +4,12 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
 
 public class TableAvailabilityRequest {
-    private LocalDate reservationStart;
-    private LocalDate reservationEnd;
+    private LocalDateTime reservationStart;
+    private LocalDateTime reservationEnd;
 }

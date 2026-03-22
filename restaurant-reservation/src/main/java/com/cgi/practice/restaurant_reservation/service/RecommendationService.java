@@ -1,6 +1,8 @@
 package com.cgi.practice.restaurant_reservation.service;
 
 import com.cgi.practice.restaurant_reservation.dto.RecommendationRequest;
+import com.cgi.practice.restaurant_reservation.dto.TableAvailabilityRequest;
+import com.cgi.practice.restaurant_reservation.dto.TableAvailabilityResponse;
 import com.cgi.practice.restaurant_reservation.dto.TableRecommendationResponse;
 import com.cgi.practice.restaurant_reservation.entity.RestaurantTable;
 import com.cgi.practice.restaurant_reservation.enums.ReservationStatus;
@@ -42,6 +44,29 @@ public class RecommendationService {
                         calculateScore(table, request)
                 ))
                 .sorted(Comparator.comparingInt(TableRecommendationResponse::getScore).reversed())
+                .toList();
+    }
+
+    public List<TableAvailabilityResponse> getTableAvailability(TableAvailabilityRequest request) {
+        List<RestaurantTable> tables = restaurantTableRepository.findAll();
+
+        return tables.stream()
+                .map(table -> new TableAvailabilityResponse(
+                        table.getId(),
+                        table.getTableNumber(),
+                        table.getCapacity(),
+                        table.getZone(),
+                        table.getX(),
+                        table.getY(),
+                        !reservationRepository
+                                .findByRestaurantTableIdAndStatusAndReservationStartLessThanAndReservationEndGreaterThan(
+                                        table.getId(),
+                                        ReservationStatus.ACTIVE,
+                                        request.getReservationEnd(),
+                                        request.getReservationStart()
+                                )
+                                .isEmpty()
+                ))
                 .toList();
     }
 

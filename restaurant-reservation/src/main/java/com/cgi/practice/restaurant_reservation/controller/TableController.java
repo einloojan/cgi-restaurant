@@ -1,6 +1,8 @@
 package com.cgi.practice.restaurant_reservation.controller;
 
 import com.cgi.practice.restaurant_reservation.dto.RecommendationRequest;
+import com.cgi.practice.restaurant_reservation.dto.TableAvailabilityRequest;
+import com.cgi.practice.restaurant_reservation.dto.TableAvailabilityResponse;
 import com.cgi.practice.restaurant_reservation.dto.TableRecommendationResponse;
 import com.cgi.practice.restaurant_reservation.entity.RestaurantTable;
 import com.cgi.practice.restaurant_reservation.repository.RestaurantTableRepository;
@@ -31,5 +33,10 @@ public class TableController {
     @PostMapping("/recommendations")
     public List<TableRecommendationResponse> getRecommendations(@RequestBody RecommendationRequest request) {
         return recommendationService.getRecommendations(request);
+    }
+
+    @PostMapping("/availability")
+    public List<TableAvailabilityResponse> getAvailability(@RequestBody TableAvailabilityRequest request) {
+        return recommendationService.getTableAvailability(request);
     }
 }
