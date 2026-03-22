@@ -34,3 +34,26 @@ export type TableRecommendationResponse = {
     occupied: boolean
     score: number
 }
+
+export type TableAvailabilityRequest = {
+    reservationStart: string
+    reservationEnd: string
+}
+
+export type TableAvailabilityResponse = {
+    id: number
+    tableNumber: string
+    capacity: number
+    zone: Zone
+    x: number
+    y: number
+    occupied: boolean
+}
+
+export type CreateReservationRequest = {
+    customerName: string
+    tableId: number
+    reservationStart: string
+    reservationEnd: string
+    partySize: number
+}
