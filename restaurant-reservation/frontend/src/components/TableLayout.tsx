@@ -38,6 +38,7 @@ function TableLayout({ tables, recommendations }: Props) {
               }}
               title={`${table.tableNumber} | Capacity: ${table.capacity} | Zone: ${table.zone}`}
             >
+              {isTopRecommendation && <strong>Recommended</strong>}
               <div>{table.tableNumber}</div>
               <div>{table.capacity} seats</div>
             </div>
