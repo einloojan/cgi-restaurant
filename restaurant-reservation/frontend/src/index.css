@@ -123,3 +123,27 @@ header {
 .error-text {
   color: #b91c1c;
 }
+
+.occupied-table {
+  background: #d1d5db;
+  border: 2px solid #6b7280;
+}
+
+.success-text {
+  color: #166534;
+  font-weight: 600;
+}
+
+.recommendation-summary button {
+  margin-top: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #16a34a;
+  color: white;
+  cursor: pointer;
+}
+
+.recommendation-summary button:hover {
+  background: #15803d;
+}

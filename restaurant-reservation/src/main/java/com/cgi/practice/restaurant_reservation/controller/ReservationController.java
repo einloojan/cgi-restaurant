@@ -5,7 +5,7 @@ import com.cgi.practice.restaurant_reservation.entity.Reservation;
 import com.cgi.practice.restaurant_reservation.service.ReservationService;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "http:localhost:5173")
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/api/reservations")
 
